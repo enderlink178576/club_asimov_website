@@ -91,16 +91,3 @@ body{background-color: black;}
 p,h1,h2,h3,h4,h5,h6,text,title{
     color: white;
 }
-
-.robot_n1 {
-  width: 900px;
-  height: 500px;
-  vertical-align: middle;
-  margin-right: 5px;}
-
-.img {
-  width: 900px;
-  height: 500px;
-  vertical-align: middle;
-  margin-right: 5px; 
-}
