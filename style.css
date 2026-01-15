@@ -2,12 +2,13 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
-  background: #333;
-  padding: 10px;
+  background: #222;
+  padding: 14px;
   margin: 0;
 }
 
 nav a {
+  margin-left: 30px;
   text-decoration: none;
   color: white;
   padding: 8px 12px;
@@ -47,6 +48,11 @@ footer a:hover {
   color: #8188c7;
   text-decoration: underline;
 }
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
 
 .discord-icon {
   width: 18px;
@@ -63,6 +69,11 @@ footer a:hover {
   color: white;
   cursor: pointer;
 }
+main h1,
+main p {
+  margin-left: 40px;
+}
+
 
 /* Responsive : en dessous de 768px */
 @media (max-width: 768px) {
@@ -84,10 +95,74 @@ footer a:hover {
   }
 }
 
+#projets-actuels {
+  margin-left: 40px;    
+  margin-top: 50px;
+}
+
+#projets-actuels h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.projet-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  background-color: #1a1c22; 
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+
+.projet-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.projet-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 10px 0;
+}
+
+.voir-plus {
+  background-color: #6a5cff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.voir-plus:hover {
+  background-color: #4e4caf;
+}
+
+
 
 /*théme */
 
-body{background-color: black;}
+body{
+  background-color: #0f1115;
+  font-family: 'Roboto', sans-serif;
+}
+
 p,h1,h2,h3,h4,h5,h6,text,title{
     color: white;
 }
+h1 .accentuated {
+  background: linear-gradient(90deg, #6a5cff, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
