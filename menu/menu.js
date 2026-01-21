@@ -1,5 +1,5 @@
 // Charger le contenu de menu.html dans la div #menu
-fetch("/nav/menu.html")
+fetch("menu.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("menu").innerHTML = data;
