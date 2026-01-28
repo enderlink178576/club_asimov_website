@@ -20,14 +20,14 @@ nav a:hover {
 }
 
 html, body {
-  height: 100%;              /* occupe toute la hauteur */
+  height: 100%;
   margin: 0;
   display: flex;
-  flex-direction: column;    /* empile menu, contenu, footer */
+  flex-direction: column;
 }
 
 main {
-  flex: 1;                   /* prend tout l’espace disponible */
+  flex: 1;
 }
 
 footer {
@@ -48,11 +48,11 @@ footer a:hover {
   color: #8188c7;
   text-decoration: underline;
 }
+
 h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
 }
-
 
 .discord-icon {
   width: 18px;
@@ -61,42 +61,39 @@ h1 {
   margin-right: 5px;
 }
 
-/* Bouton hamburger caché en grand écran */
-
 .menu-toggle {
   display: none;
   font-size: 24px;
   color: white;
   cursor: pointer;
 }
+
 main h1,
 main p {
   margin-left: 40px;
 }
 
-
-/* Responsive : en dessous de 768px */
 @media (max-width: 768px) {
   nav ul {
-    display: none;           /* cache le menu par défaut */
-    flex-direction: column;  /* menu vertical */
+    display: none;
+    flex-direction: column;
     background: #333;
     width: 100%;
   }
 
   nav ul.show {
-    display: flex;           /* affiche le menu quand actif */
+    display: flex;
   }
 
   .menu-toggle {
-    display: block;          /* bouton hamburger visible */
+    display: block;
     padding: 10px;
     background: #333;
   }
 }
 
 #projets-actuels {
-  margin-left: 40px;    
+  margin-left: 40px;
   margin-top: 50px;
 }
 
@@ -111,8 +108,8 @@ main p {
 .projet-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  background-color: #1a1c22; 
+  align-items: flex-start;
+  background-color: #1a1c22;
   padding: 15px;
   border-radius: 10px;
   max-width: 250px;
@@ -147,18 +144,15 @@ main p {
   background-color: #4e4caf;
 }
 
-
-
-/*théme */
-
-body{
+body {
   background-color: #0f1115;
   font-family: 'Roboto', sans-serif;
 }
 
-p,h1,h2,h3,h4,h5,h6,text,title{
-    color: white;
+p, h1, h2, h3, h4, h5, h6, text, title {
+  color: white;
 }
+
 h1 .accentuated {
   background: linear-gradient(90deg, #6a5cff, #4ecdc4);
   -webkit-background-clip: text;
@@ -166,3 +160,46 @@ h1 .accentuated {
   background-clip: text;
 }
 
+.robot_n1 {
+  max-width: 100%;
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px auto;
+}
+
+.slider-wrapper {
+  position: relative;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.slider-image {
+  display: none;
+}
+
+.slider-image.active {
+  display: block;
+}
+
+.slider-btn {
+  background-color: #6a5cff;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.slider-btn:hover {
+  background-color: #4e4caf;
+}
