@@ -8,45 +8,44 @@
 </head>
 <body>
     <header>
-   <nav>
-<div class="menu-toggle" id="menu-toggle">
-    ☰
-  </div>
-  <ul id="menu-list">
-    <li><a href="../index.html">Accueil</a></li>
-    <li><a href="../pages/selection du robot.html">Choix du robot</a></li>
-  </ul>
-</nav>
-  </header>
+        <nav>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+            <ul id="menu-list">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../pages/selection du robot.html">Choix du robot</a></li>
+            </ul>
+        </nav>
+    </header>
    
     <main>
         <h1 style="text-align: center;">Robot N°1</h1>
-        <h2 style="text-align: center;"><img src="../photo robot/IMG_20251203_143757.jpg" alt="img" class="robot_n1"></h2>
+
+        <div class="slider-container">
+            <button class="slider-btn prev" id="prev-btn">&#10094;</button>
+            <div class="slider-wrapper">
+                <img src="../photo robot/IMG_20251203_143757.jpg" alt="img 1" class="robot_n1 slider-image active">
+                <img src="../photo robot/IMG_20251203_143758.jpg" alt="img 2" class="robot_n1 slider-image">
+                <img src="../photo robot/IMG_20251203_143759.jpg" alt="img 3" class="robot_n1 slider-image">
+            </div>
+            <button class="slider-btn next" id="next-btn">&#10095;</button>
+        </div>
+
         <h1>code pour le déplacement du robot</h1>
     </main>
-<div class="code-block">
-  <button class="copy-btn">Copier</button>
-  <pre><code>
-&lt;h1&gt;Bonjour&lt;/h1&gt;
-&lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;
-  </code></pre>
-</div>
 
-    
-  <footer>
-    <p>
-      En cas de problème avec nos services, merci de contacter un administrateur du
-      <a href="https://discord.gg/QSzZDBCfGt" target="_blank">
-        <img src="photo robot/discord.png" alt="Discord" class="discord-icon">
-        serveur Discord
-      </a>.
-    </p>
+    <footer>
+        <p>
+            En cas de problème avec nos services, merci de contacter un administrateur du
+            <a href="https://discord.gg/QSzZDBCfGt" target="_blank">
+                <img src="photo robot/discord.png" alt="Discord" class="discord-icon">
+                serveur Discord
+            </a>.
+        </p>
+        <p>Made by enderlink178576 and Théophile</p>
+    </footer>
 
-    <p>Made by enderlink178576 and Théophile</p>
-  </footer>
-  <script src="footer/test.js">
+    <script src="footer/test.js"></script>
+    <script src="../slider.js"></script>
 </body>
-
 </html>
-
 
