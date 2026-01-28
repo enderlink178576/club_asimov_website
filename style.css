@@ -75,7 +75,7 @@ h1 {
 
 main h1,
 main p {
-  margin-left: 20%;
+  margin-left: 25%;
 }
 
 @media (max-width: 768px) {
