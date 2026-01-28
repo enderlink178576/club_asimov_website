@@ -51,7 +51,7 @@ footer a:hover {
 
 h1 {
   font-family: 'Poppins', sans-serif;
-  font-weight: 700;
+  font-weight: 1200;
 }
 
 .discord-icon {
@@ -70,7 +70,7 @@ h1 {
 
 main h1,
 main p {
-  margin-left: 40px;
+  margin-left: 20%;
 }
 
 @media (max-width: 768px) {
@@ -93,7 +93,7 @@ main p {
 }
 
 #projets-actuels {
-  margin-left: 40px;
+  margin-left: 20%;
   margin-top: 50px;
 }
 
