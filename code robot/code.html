@@ -40,8 +40,16 @@
         <h1>code pour le déplacement du robot</h1>
 <div class="code-block">
   <button class="copy-btn">Copier</button>
-  <pre><code class="langage-py">&lt;h1&gt;Bonjour&lt;/h1&gt;
-&lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;</code></pre>
+  <pre><code class="langage-python"#!/usr/bin/env pybricks-micropython
+from pybricks.ev3devices import Motor
+from pybricks.parameters import Port
+from pybricks.robotics import DriveBase
+
+# Initialisation des deux moteurs
+m_left = Motor(Port.B)
+m_right = Motor(Port.C)
+# Initialisation du véhicule robotisé
+robot = DriveBase(m_left, m_right, 56, 114)</code></pre>
 </div>
 <iframe width="1410" height="793" src="https://www.youtube.com/embed/psaDHhZ0cPs" title="APPRENDRE LE PYTHON #1 ? LES BASES &amp; PREREQUIS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </main>
@@ -63,6 +71,7 @@
     <script src="../prism/prism.js"></script>
 </body>
 </html>
+
 
 
 
