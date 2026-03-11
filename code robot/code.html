@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🤖Robot Trieur🤖</title>
     <link rel="stylesheet" href="../style.css">
-    <link href="../prism/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../prism/prism.css">
+    <script defer src="footer/test.js"></script>
+    <script defer src="code.js"></script>
+    <script defer src="../prism/prism.js"></script>
 </head>
 <body>
   <header>
@@ -15,16 +18,17 @@
   </div>
   <ul id="menu-list">
     <div class="buttons-nav">
-    <li><a href="../index.html">Accueil</a></li>
-    <li><a href="../pages/selection du robot.html">Choix du robot</a></li>
-    <div/>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href=".../index.html">Accueil</a></li>
+    <li><a href="pages/selection du robot.html">Choix du robot</a></li>
+    </div>
   </ul>
 
 </nav>
   </header>
-     <h1 style="text-align: center;">Robot Trieur</h1>
+   
     <main>
-      
+        <h1 style="text-align: center;">Robot Trieur</h1>
 
         <div class="slider-container">
             <button class="slider-btn prev" id="prev-btn">&#10094;</button>
@@ -32,10 +36,13 @@
                 <img src="../photo robot/1000031308.jpg" alt="img 1" class="robot_n1 slider-image active">
                 <img src="../photo robot/1000031309.jpg" alt="img 2" class="robot_n1 slider-image">
                 <img src="../photo robot/1000031310.jpg" alt="img 3" class="robot_n1 slider-image">
+            </div>
             <button class="slider-btn next" id="next-btn">&#10095;</button>
         </div>
 
         <h1>code pour le déplacement du robot</h1>
+
+
 <div class="code-block">
   <pre><code class="language-python">#!/usr/bin/env pybricks-micropython
 from pybricks.ev3devices import Motor
@@ -48,7 +55,7 @@ m_right = Motor(Port.C)
 # Initialisation du véhicule robotisé
 robot = DriveBase(m_left, m_right, 56, 114)</code></pre>
 </div>
-<iframe width="1410" height="793" src="https://www.youtube.com/embed/psaDHhZ0cPs" title="APPRENDRE LE PYTHON #1 ? LES BASES &amp; PREREQUIS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
     </main>
 
 
@@ -63,13 +70,8 @@ robot = DriveBase(m_left, m_right, 56, 114)</code></pre>
         <p>Made by enderlink178576 and Théophile</p>
     </footer>
 
-    <script src="../footer/test.js"></script>
-    <script src="../prism/prism.js"></script>
 </body>
 </html>
-
-
-
 
 
 
