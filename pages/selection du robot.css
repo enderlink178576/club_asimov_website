@@ -1,9 +1,11 @@
 .container {
+    /* limit the size to half of the viewport and keep the block on the left side */
+    width: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 30px;
-    margin-left: 40px;
+    margin-left: 0; /* remove previous offset so the element hugs the left edge */
     margin-top: 30px;
 }
 

@@ -27,7 +27,7 @@
   </header>
    
     <main>
-        <h1 style="text-align: center;">Robot Trieur</h1>
+        <h1 class="title">Robot Trieur</h1>
 
         <div class="slider-container">
             <button class="slider-btn prev" id="prev-btn">&#10094;</button>
@@ -39,10 +39,10 @@
             <button class="slider-btn next" id="next-btn">&#10095;</button>
         </div>
 
-        <h1>code pour le déplacement du robot</h1>
 
-
+<div class="mid-page">
 <div class="code-block">
+        <h1>code du robot</h1>
   <pre><code class="language-python">#!/usr/bin/env pybricks-micropython
 from pybricks.ev3devices import Motor
 from pybricks.parameters import Port
@@ -54,7 +54,13 @@ m_right = Motor(Port.C)
 # Initialisation du véhicule robotisé
 robot = DriveBase(m_left, m_right, 56, 114)</code></pre>
 </div>
-
+<div class="video-div">
+  <h1 >vidéo du robot</h1>
+  <div class="video-wrapper">
+    <video src="clips/wiz_videooooo.mp4" controls poster="img/wiz_adventure.png" width="600"></video>
+    </div>
+</div>
+</div>
     </main>
 
 
