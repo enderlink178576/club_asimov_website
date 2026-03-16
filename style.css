@@ -109,7 +109,6 @@ main p {
   font-weight: 700;
   font-size: 28px;
   margin-bottom: 20px;
-  color: white;
 }
 
 .projet-card {
@@ -154,10 +153,6 @@ main p {
 body {
   background-color: #0f1115;
   font-family: 'Roboto', sans-serif;
-}
-
-p, h1, h2, h3, h4, h5, h6, text, title {
-  color: white;
 }
 
 h1 .accentuated {
@@ -256,4 +251,17 @@ h1 .accentuated {
     width: 100%;
     margin-bottom: 20px;
   }
+}
+
+/* Thème clair/sombre */
+body {
+  background-color: white;
+  color: black;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: white;
 }
