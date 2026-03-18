@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="style.css">
+  <script defer src="thème.js"></script>
+  <script defer src="footer/test.js"></script>
+</head>
+<body>
+    <header>
+    <nav>
+      <div class="menu-toggle" id="menu-toggle">
+        ☰
+      </div>
+
+      <ul id="menu-list">
+        <div class="buttons-nav">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="pages/selection du robot.html">Choix du robot</a></li>
+        <li><a href="nous contacter.html">Nous contacter</a></li>
+        <li><a target="_blank" href="https://lycee-beaupre.fr/">Notre lycée</a></li>
+
+        </div>
+        <button id="toggle-theme">🌙</button>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Nous contacter</h1>
+      <!-- FORMULAIRE DE CONTACT -->
+      <div class="contact-card">
+        <form 
+          id="contactForm"
+          class="contact-form" 
+          action="https://formsubmit.co/63f8c8b4e577d4a696068d3d0c684c6b" 
+          method="POST"
+        >
+          <div class="row">
+            <label>
+              Nom
+              <input type="text" name="name" placeholder="Nom" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Email" required />
+            </label>
+          </div>
+
+          <label>
+            Message
+            <textarea name="message" placeholder="Message..." required></textarea>
+          </label>
+
+          <!-- OPTIONS FORMSUBMIT -->
+          <input type="hidden" name="_subject" value="Nouveau message depuis mon site !">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://theophileeeeeee.github.io/Website/merci.html">
+          <input type="hidden" name="_error" value="https://theophileeeeeee.github.io/Website/erreur.html" />
+
+          <div class="row" style="justify-content:flex-start;">
+            <button type="submit" class="btn btn--grad">Envoyer</button>
+            <button type="reset" class="btn">Effacer</button>
+          </div>
+        </form>
+      </div>
+
+  </main>
+    <footer>
+    <p>
+      En cas de problème avec nos services, merci de contacter un administrateur du
+      <a href="https://discord.gg/QSzZDBCfGt" target="_blank">
+        <img src="photo robot/discord.png" alt="Discord" class="discord-icon">
+        serveur Discord
+      </a>.
+    </p>
+
+    <p>Made by enderlink178576 and Théophile</p>
+  </footer> 
+</body>
+</html>
