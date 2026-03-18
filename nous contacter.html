@@ -34,7 +34,7 @@
         <form 
           id="contactForm"
           class="contact-form" 
-          action="https://formsubmit.co/63f8c8b4e577d4a696068d3d0c684c6b" 
+          action="https://formsubmit.co/el/nebibe" 
           method="POST"
         >
           <div class="row">
@@ -42,10 +42,12 @@
               Nom
               <input type="text" name="name" placeholder="Nom" required />
             </label>
+          
             <label>
               Email
               <input type="email" name="email" placeholder="Email" required />
             </label>
+            <label>Sujet <input type="text" name="subject" placeholder="Sujet" required></label>
           </div>
 
           <label>
@@ -56,12 +58,12 @@
           <!-- OPTIONS FORMSUBMIT -->
           <input type="hidden" name="_subject" value="Nouveau message depuis mon site !">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://theophileeeeeee.github.io/Website/merci.html">
-          <input type="hidden" name="_error" value="https://theophileeeeeee.github.io/Website/erreur.html" />
-
           <div class="row" style="justify-content:flex-start;">
             <button type="submit" class="btn btn--grad">Envoyer</button>
             <button type="reset" class="btn">Effacer</button>
+            <div data-callback="submit" data-theme="dark" data-sitekey="6LdpKIMUAAAAAPH4XLcypBTMPsV7eTWZrznHCndM" class="g-recaptcha"></div>
+                            <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
+
           </div>
         </form>
       </div>
@@ -75,7 +77,6 @@
         serveur Discord
       </a>.
     </p>
-
     <p>Made by enderlink178576 and Théophile</p>
   </footer> 
 </body>
