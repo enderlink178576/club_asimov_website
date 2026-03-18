@@ -61,12 +61,31 @@
           <div class="row" style="justify-content:flex-start;">
             <button type="submit" class="btn btn--grad">Envoyer</button>
             <button type="reset" class="btn">Effacer</button>
-            <div data-callback="submit" data-theme="dark" data-sitekey="6LdpKIMUAAAAAPH4XLcypBTMPsV7eTWZrznHCndM" class="g-recaptcha"></div>
-                            <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
-
+            <div id="captcha-container" style="display:none;">
+              <div data-callback="submit" data-theme="dark" data-sitekey="6LdpKIMUAAAAAPH4XLcypBTMPsV7eTWZrznHCndM" class="g-recaptcha"></div>
+            </div>
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
           </div>
         </form>
       </div>
+
+      <script>
+        function initRecaptchaForm() {
+          const form = document.getElementById('contactForm');
+          const captchaContainer = document.getElementById('captcha-container');
+
+          form.addEventListener('submit', (event) => {
+            // If the recaptcha is not yet solved, show it and stop submission.
+            if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse().length === 0) {
+              event.preventDefault();
+              captchaContainer.style.display = 'block';
+              captchaContainer.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        }
+
+        window.addEventListener('load', initRecaptchaForm);
+      </script>
 
   </main>
     <footer>
