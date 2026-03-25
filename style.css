@@ -336,3 +336,8 @@ textarea {
   box-shadow: var(--shadow-1);
   text-decoration: none;}
 *{box-sizing:border-box}
+
+.logo-lycée  {
+  width: 120px;
+  height: 40px;
+}
