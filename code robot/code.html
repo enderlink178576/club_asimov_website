@@ -11,6 +11,9 @@
     <script defer src="code.js"></script>
     <script defer src="../prism/prism.js"></script>
     <script defer src="../thème.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <header>
@@ -22,8 +25,7 @@
     <div class="buttons-nav">
         <li><a href="../index.html">Accueil</a></li>
         <li><a href="../pages/selection du robot.html">Choix du robot</a></li>
-        <li><a href="../nous contacter.html">Nous contacter
-        </a></li>
+        <li><a href="../nous contacter.html">Nous contacter</a></li>
         <li><a target="_blank" href="https://lycee-beaupre.fr/"><img src="../photo/logo_horiz.png" alt="logo de notre lycée" class="logo-lycée"></a></li>
     </div>
     <button id="toggle-theme">🌙</button>
@@ -49,50 +51,316 @@
 <div class="code-block">
         <h1>code du robot</h1>
   <pre><code class="language-python">#!/usr/bin/env pybricks-micropython
-from pybricks.hubs import EV3Brick
-from pybricks.ev3devices import (Motor, TouchSensor, ColorSensor,
-                                 InfraredSensor, UltrasonicSensor, GyroSensor)
-from pybricks.parameters import Port, Stop, Direction, Button, Color
-from pybricks.tools import wait, StopWatch, DataLog
-from pybricks.robotics import DriveBase
-from pybricks.media.ev3dev import SoundFile, ImageFile
 
-
-# This program requires LEGO EV3 MicroPython v2.0 or higher.
-# Click "Open user guide" on the EV3 extension tab for more information.
-
-
-# Create your objects here.
-ev3 = EV3Brick()
-telecommande = InfraredSensor(Port.S1)
-m_left = Motor(Port.B)
-m_right = Motor(Port.C)
-robot = DriveBase(m_left, m_right, 56, 114)
-
-# Write your program here.
-ev3.speaker.beep()
-
-
-
-lecture = True
-while lecture == True :
-    liste_boutons = telecommande.buttons(1)
-
-    if liste_boutons != []:
-        print(liste_boutons)
-        elt_liste = liste_boutons.pop()
-        if elt_liste == Button.BEACON:
-            lecture = False        
-        if elt_liste == Button.LEFT_UP:
-            robot.drive(50, 0)
-        if elt_liste == Button.LEFT_DOWN:
-            robot.drive(-50, 0)
-        if elt_liste == Button.RIGHT_DOWN:
-            robot.drive(0, 50)
-        if elt_liste == Button.RIGHT_UP:
-            robot.drive(0, -50)
-        
-    wait(200)
+    from pybricks.hubs import EV3Brick
+    
+    from pybricks.ev3devices import (Motor, TouchSensor, ColorSensor,
+    
+                                     InfraredSensor, UltrasonicSensor, GyroSensor)
+    
+    from pybricks.parameters import Port, Stop, Direction, Button, Color, SoundFile
+    
+    from pybricks.tools import wait, StopWatch, DataLog
+    
+    from pybricks.robotics import DriveBase
+    
+    from pybricks.media.ev3dev import SoundFile, ImageFile
+    
+    
+    
+    
+    
+    
+    # This program requires LEGO EV3 MicroPython v2.0 or higher.
+    
+    # Click "Open user guide" on the EV3 extension tab for more information.
+    
+    
+    
+    
+    # Create your objects here.
+    
+    ev3 = EV3Brick()
+    
+    moteur_gauche = Motor(Port.A)
+    
+    moteur_potentiometre = Motor(Port.D)
+    
+    bras_pousser1 = Motor(Port.B)
+    
+    bras_pousser2 = Motor(Port.C)
+    
+    Capteur = ColorSensor(Port.S4)
+    
+    telecommande = InfraredSensor(Port.S2)
+    
+    bouton_uregence = TouchSensor(Port.S3)
+    
+    
+    
+    
+    
+    # variables tapis roulant
+    
+    angle_old = 0
+    
+    vitesse = 0
+    
+    
+    
+    
+    # variables bras
+    
+    V = 270
+    
+    
+    
+    
+    #variable liste
+    
+    rouge = 0
+    
+    bleu = 0
+    
+    vert = 0
+    
+    jaune = 0
+    
+    
+    
+    
+    #variable angle bras
+    
+    angleD = 110
+    
+    angle1 = 170
+    
+    angle2 = 250
+    
+    
+    
+    
+    #variable led brick
+    
+    lumiere = 0
+    
+    
+    
+    
+    # intialisations des bras
+    
+    ev3.speaker.play_file(SoundFile.HELLO)
+    
+    bras_pousser1.run(-90)
+    
+    bras_pousser2.run(-90)
+    
+    wait(2000)
+    
+    bras_pousser1.stop()
+    
+    bras_pousser2.stop()
+    
+    bras_pousser1.reset_angle(0)
+    
+    bras_pousser2.reset_angle(0)
+    
+    bras_pousser1.run_target(V, 90, wait=False)
+    
+    bras_pousser2.run_target(V, 90, wait=False)
+    
+    wait(1000)
+    
+    ev3.screen.clear()
+    
+    
+    
+    
+    while True :
+    
+        #tapis roulant potentiometre
+    
+       
+    
+        angle = moteur_potentiometre.angle()
+    
+        if angle > angle_old :
+    
+            vitesse = vitesse +15
+    
+            if vitesse > 360 :
+    
+                vitesse = 360
+    
+        elif angle < angle_old :
+    
+            vitesse = vitesse -15
+    
+            if vitesse < 0 :
+    
+                vitesse = 0
+    
+        moteur_gauche.run(-vitesse)
+    
+        angle_old = angle
+    
+        #bouton arret d urgence
+    
+        if bouton_uregence.pressed():
+    
+            vitesse = 0
+    
+    
+    
+    
+    
+        # telecommande
+    
+    
+    
+    
+        liste_boutons = telecommande.buttons(1)
+    
+    
+    
+    
+        if liste_boutons != []:
+    
+            print(liste_boutons)
+    
+            elt_liste = liste_boutons.pop()
+    
+            if elt_liste == Button.LEFT_UP:
+    
+                vitesse = vitesse +15
+    
+                if vitesse > 360 :
+    
+                    vitesse = 360
+    
+            elif elt_liste == Button.LEFT_DOWN:
+    
+                vitesse = vitesse -15
+    
+                if vitesse < 0 :
+    
+                    vitesse = 0
+    
+            elif elt_liste == Button.BEACON:
+    
+                vitesse = 0
+    
+    
+    
+    
+        #capteur , bras
+    
+        couleur = Capteur.color()
+    
+        t = Capteur.rgb()
+    
+        r = t[0]
+    
+        g = t[1]
+    
+        b = t[2]
+    
+       
+    
+        #rouge    
+    
+        if  r > 25 and g < 25 and b < 25 :
+    
+            bras_pousser1.run_target(V, angle1, wait=False)
+    
+            bras_pousser2.run_target(V, angleD, wait=False)
+    
+            ev3.speaker.play_file('rouge.wav')
+    
+            ev3.light.on(Color.RED)
+    
+            rouge = rouge + 1
+    
+            lumiere = 0
+    
+        #jaune
+    
+        elif r > 40 and g  > 40 and b < 40 :
+    
+            bras_pousser2.run_target(V, angle1, wait=False)
+    
+            bras_pousser1.run_target(V, angleD, wait=False)
+    
+            ev3.speaker.play_file(SoundFile.YELLOW)
+    
+            ev3.light.on(Color.YELLOW)
+    
+            jaune = jaune + 1
+    
+            lumiere = 0
+    
+        #vert
+    
+        elif r < 25 and g > 25 and b < 25 :
+    
+            bras_pousser2.run_target(V, angle2, wait=False)
+    
+            bras_pousser1.run_target(V, angleD, wait=False)
+    
+            ev3.speaker.play_file(SoundFile.GREEN)
+    
+            ev3.light.on(Color.GREEN)
+    
+            vert = vert + 1
+    
+            lumiere = 0
+    
+        #bleu
+    
+        elif r < 25 and g < 40 and b > 20 :
+    
+            bras_pousser2.run_target(V, angleD, wait=False)
+    
+            bras_pousser1.run_target(V, angle2, wait=False)
+    
+            ev3.speaker.play_file(SoundFile.BLUE)
+    
+            ev3.light.on(Color.BLUE)
+    
+            bleu = bleu + 1
+    
+            lumiere = 0
+    
+    
+    
+    
+        # liste couleur
+    
+        ev3.screen.clear()
+    
+        ev3.screen.draw_text(5, 5, "Rouge " + str(rouge))
+    
+        ev3.screen.draw_text(5, 20, "Vert " + str(vert))
+    
+        ev3.screen.draw_text(5, 35, "Bleu " + str(bleu))
+    
+        ev3.screen.draw_text(5, 50, "Jaune " + str(jaune))
+    
+    
+    
+    
+        lumiere = lumiere + 1
+    
+        if lumiere > 5:
+    
+            ev3.light.off()
+    
+    
+    
+    
+       
+    
+        wait(200)
   </code></pre>
 </div>
 <div class="video-div">
@@ -113,7 +381,7 @@ while lecture == True :
                 serveur Discord
             </a>.
         </p>
-        <p>Made by enderlink178576 and Théophile</p>
+        <p>Made by <a href="../enderlink178576.html" class="accentuated">enderlink178576</a>  and <a class="accentuated" href="https://theophileeeeeee.github.io/Website/" target="_blank">Théophile</a></p>
     </footer>
 
 </body>

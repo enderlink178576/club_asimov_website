@@ -189,7 +189,12 @@ h1 .accentuated {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
+p .accentuated {
+  background: linear-gradient(90deg, #6a5cff, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 .robot_n1 {
   max-width: 100%;
   width: 400px;
