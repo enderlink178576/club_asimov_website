@@ -47,7 +47,6 @@ nav a {
   align-items: center;
 }
 
-
 nav a:hover {
   background: #555;
 }
@@ -88,7 +87,6 @@ h1 {
   font-weight: 700;
 }
 
-
 .discord-icon {
   width: 18px;
   height: 18px;
@@ -105,8 +103,28 @@ h1 {
 
 main h1,
 main p {
-  margin-left: 20%;
+  margin: 0 20%;
 }
+@media (min-width: 769px) {
+  .title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-left: 44%;
+}
+/* each child takes roughly half the available space */
+.code-block,
+.video-div {
+  width: 48%; /* leave a small gap between them */
+  box-sizing: border-box;
+}
+.video {
+  width: 100%;
+  max-width: 480px;
+}
+}
+
 
 @media (max-width: 768px) {
   nav ul {
@@ -114,6 +132,9 @@ main p {
     flex-direction: column;
     background: #333;
     width: 100%;
+    padding: 0;
+    gap: 0;
+    align-items: stretch;
   }
 
   nav ul.show {
@@ -124,6 +145,60 @@ main p {
     display: block;
     padding: 10px;
     background: #333;
+  }
+
+  .buttons-nav {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+  }
+
+  nav ul.show .buttons-nav {
+    padding: 8px 0;
+  }
+
+  nav ul.show a {
+    margin-left: 0;
+    padding: 14px 16px;
+    width: 100%;
+    display: block;
+  }
+
+  nav ul.show li {
+    width: 100%;
+  }
+
+  nav ul.show button#toggle-theme {
+    margin: 8px 16px 16px;
+    align-self: flex-start;
+    width: auto;
+  }
+
+  .mid-page {
+    flex-direction: column;
+  }
+  .code-block,
+  .video-div {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .row {
+    grid-template-columns: 1fr;
+  }
+  .title{
+    margin-left: 0%;
+    text-align: center;
+  }
+  main h1,
+  main p {
+    margin: 0 8%;
+  }
+  .video {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -217,6 +292,17 @@ p .accentuated {
   overflow: hidden;
 }
 
+.video-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+.video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
 .slider-image {
   display: none;
 }
@@ -238,13 +324,7 @@ p .accentuated {
 .slider-btn:hover {
   background-color: #4e4caf;
 }
-.title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 40px;
-  font-weight: 700;
-  margin-top: 30px;
-  margin-left: 44%;
-}
+
 .section-desc {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
@@ -268,24 +348,6 @@ p .accentuated {
   max-width: 90%;
 }
 
-/* each child takes roughly half the available space */
-.code-block,
-.video-div {
-  width: 48%; /* leave a small gap between them */
-  box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-  .mid-page {
-    flex-direction: column;
-  }
-  .code-block,
-  .video-div {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
-
 /* Thème clair/sombre */
 body {
   background-color: var(--bg);
@@ -298,19 +360,11 @@ form {
   display: grid;
   gap: 12px;
 }
-
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
-
-@media (max-width: 700px) {
-  .row {
-    grid-template-columns: 1fr;
-  }
-}
-
 input,
 textarea {
   width: 100%;
@@ -321,12 +375,10 @@ textarea {
   color: var(--text);
   font: inherit;
 }
-
 textarea {
   min-height: 140px;
   resize: vertical;
 }
-
 .contact-card {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -334,7 +386,11 @@ textarea {
   padding: 18px;
   box-shadow: var(--shadow-2);
 }
-.btn--grad{ background: var(--grad-1) ; color: #000000; border:0; text-decoration: none;}
+.btn--grad{ 
+  background: var(--grad-1) ;
+  color: #000000; border:0;
+  text-decoration: none;
+  }
 .btn{
   appearance:none; border:0; cursor:pointer; font-weight:700;
   padding:10px 14px; border-radius:12px;
