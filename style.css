@@ -402,3 +402,8 @@ textarea {
   width: 120px;
   height: 40px;
 }
+
+.profil {
+    width: 30%;
+    border-radius: 400px;
+}
